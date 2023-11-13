@@ -1,5 +1,7 @@
 import openai
 import streamlit as st
+import time
+import json
 
 st.title("ChatGPT-like clone")
 
@@ -17,6 +19,13 @@ if "messages" not in st.session_state:
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
+
+def write_json(dictionary):
+    # Serializing json
+    json_object = json.dumps(dictionary, indent=4, ensure_ascii=False)
+    # Writing to sample.json
+    with open(time.strftime("%Y%m%d-%H%M%S") + ".json", "w+") as outfile:
+        outfile.write(json_object)
 
 if prompt := st.chat_input("Bạn cần gì?"):
     with st.chat_message("user"):
@@ -47,6 +56,12 @@ if prompt := st.chat_input("Bạn cần gì?"):
                 full_response = "Done, giờ bạn có thể hỏi chatGPT thoải mái nhé!"
                 st.session_state["tag"] = ""
                 st.session_state["state"] = ""
+                # Write session state to dict
+                widget_values = {}
+                for key in st.session_state:
+                    widget_values[key] = st.session_state[key]
+                write_json(widget_values)
+
         else:
             for response in openai.ChatCompletion.create(
                 model=st.session_state["openai_model"],
