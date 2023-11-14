@@ -34,7 +34,8 @@ if prompt := st.chat_input("Bạn cần gì?"):
             for response in openai.ChatCompletion.create(
                 model=st.session_state["openai_model"],
                 messages=[
-                    {"role": m["role"], "content": m["content"]}
+                    {"role": "system", "content": "Đóng vai trò như 1 nhân viên tư vấn du học của ATS, công ty chuyên tư ván du học Úc, Canada và Mỹ. Với hơn 20 năm kinh nghiệm hiện có văn phòng tại 55 Trương Quốc Dung, Phú Nhuận",
+                    "role": m["role"], "content": m["content"]}
                     for m in st.session_state.messages
                 ],
                 stream=True,
