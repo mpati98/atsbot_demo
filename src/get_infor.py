@@ -23,6 +23,7 @@ def get_infor(tag):
         full_response = "Done, giờ bạn có thể hỏi chatGPT thoải mái nhé!"
         st.session_state["tag"] = ""
         st.session_state["state"] = ""
+        st.session_state["gpt_chat"] = "first"
         # Write session state to dict
         widget_values = {}
         for key in st.session_state:

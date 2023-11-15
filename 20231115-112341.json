@@ -1,0 +1,55 @@
+{
+    "tag": "",
+    "state": "",
+    "openai_model": "gpt-3.5-turbo",
+    "messages": [
+        {
+            "role": "assistant",
+            "content": "Trước khi vào nội dung chính, ta làm quen với nhau trước được không, bạn tên gì?"
+        },
+        {
+            "role": "user",
+            "content": "Duẫng"
+        },
+        {
+            "role": "assistant",
+            "content": "Chào bạn, cho mình xin số điện thoại để tiện liên hệ nhé"
+        },
+        {
+            "role": "user",
+            "content": "918391823"
+        },
+        {
+            "role": "assistant",
+            "content": "Hiện bạn đang ở khu vực nào thế? HCM, DN, HN, ..."
+        },
+        {
+            "role": "user",
+            "content": "HCM"
+        },
+        {
+            "role": "assistant",
+            "content": "Năm nay bạn bao nhiêu tuổi rồi, bạn có dự kiến đi du học khi nào?"
+        },
+        {
+            "role": "user",
+            "content": "23"
+        },
+        {
+            "role": "assistant",
+            "content": "Bạn đang nhắm đến du học nước nào? Úc, Canada hay Mỹ?"
+        },
+        {
+            "role": "user",
+            "content": "Úc"
+        },
+        {
+            "role": "assistant",
+            "content": "Bạn có hứng thú hay quan tâm đến ngành nào không?"
+        },
+        {
+            "role": "user",
+            "content": "Công nghệ thông tin"
+        }
+    ]
+}
